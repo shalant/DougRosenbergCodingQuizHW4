@@ -10,136 +10,168 @@ var questions = [
     "Question 3"
 ]
 
+beginButton.addEventListener("click", function() {
+    var beginButton = document.getElementById("beginButton");
+    beginButton.style.display = "none";
+});
+
+//document.addEventListener("click", function(){
+    //document.getElementById("demo").innerHTML = "Hello World";
+//});
+
 //how to i make these appear on separate pages?
 var askQuestion1 = document.createElement("p");
-btn.innerHTML = "String values must be enclosed within ____ when being assigned to variables";
+askQuestion1.innerHTML = "String values must be enclosed within ____ when being assigned to variables";
 document.body.appendChild(askQuestion1);
 
 var askQuestion2 = document.createElement("p");
-btn.innerHTML = "Arrays in Javascript can be used to store";
+askQuestion2.innerHTML = "Arrays in Javascript can be used to store";
 document.body.appendChild(askQuestion2);
 
 var askQuestion3 = document.createElement("p");
-btn.innerHTML = "The condition in an if/else statement is enclosed within_____";
+askQuestion3.innerHTML = "The condition in an if/else statement is enclosed within_____";
 document.body.appendChild(askQuestion3);
+
+//question text, list of the 
+
+var questions = [
+	{
+		text: "What color is an apple",
+		options: ["red", "blue", "green"],
+        answer: 0
+    
+	}]
+
+
+function addQuestion(question) {
+        // Insert paragraph element with innertext of question
+        var questionParagraph = document.createElement("p");
+        questionParagraph.innerHTML = question.text;
+        document.body.appendChild(questionParagraph);
+        // Loop over choices, for each choice add button
+        for(var i = 0; i<question.options.length; i++) {
+            var buttonCreater = document.createElement("button");
+        }
+        // If the choice is the answer, givbe it a special class}
+    }
+
+addQuestion(questions[0]) 
 
 var answers = [
     {
         //could i just use questions[0]
-        question: "Question1,"
-        answers: [
+        question: 'Question1',
+        answer: [
             {
-                text: "A. Commas",
-                isCorrect: false;
+                text: 'A. Commas',
+                isCorrect: false
             },
             {
-                text: "B. Curly Braces",
-                isCorrect: false;
+                text: 'B. Curly Braces',
+                isCorrect: false
             },
             {
-                text: "C. Quotes",
-                isCorrect: true;
-            {   
-                text: "D. Parenthesis"
-                isCorrect: false;
+                text: 'C. Quotes',
+                isCorrect: true
+            },
+            {
+                text: 'D. Parenthesis',
+                isCorrect: false
             }
-            },
-            
-            {
-                question: "Question2,"
-                answers: [
-                    {
-                        text: "A: Numbers and strings",
-                        isCorrect: false;
-                    },
-                    {
-                        text: "B: Other arrays",
-                        isCorrect: false;
-                    },
-                    {
-                        text: "C: Boolians",
-                        isCorrect: false;
-                    },
-                    {
-                        text: "D: All of the above",
-                        isCorrect: true;
-                    }
-
-                    {
-                question: "Question3,"
-                answers: [
-                    {
-                        text: "A: Quotes",
-                        isCorrect: false;
-                    },
-                    {
-                        text: "B: Curly braces",
-                        isCorrect: false;
-                    },
-                    {
-                        text: "C: Parenthesis",
-                        isCorrect: true;
-                    }
-                    {
-                        text: "D: Square brackets",
-                        isCorrect: false;
-                    },
-        
         ]
-        //one idea is the following:
-        //answers: [text of the answer, points]
-        //all the correct answers get one point, wrong answers get zero
+    },    {
+        question: 'Question2',
+        answer: [
+            {
+                text: 'A: Numbers and strings',
+                isCorrect: false
+            },
+            {
+                text: 'B: Other arrays',
+                isCorrect: false
+            },
+            {
+                text: 'C: Boolians',
+                isCorrect: false
+            },
+            {
+                text: 'D: All of the above',
+                isCorrect: true
+            }
+        ]
+    },    {
+        question: 'Question3',
+        answer: [
+            {
+                text: 'A: Quotes',
+                isCorrect: false
+            },
+            {
+                text: 'B: Curly braces',
+                isCorrect: false
+            },
+            {
+                text: 'C: Parenthesis',
+                isCorrect: true
+            },
+            {
+                text: 'D: Square brackets',
+                isCorrect: false
+            }
+        ]
     }
 ]
 
 var IntervalState;
 
-var timerText = document.createElement("p");
-var seconds = 300;
-timerText.textContent = seconds;
-elementsArea.appendChild(timerText);
+                var timerText = document.createElement("p");
+                var seconds = 300;
+                timerText.textContent = seconds;
+                elementsArea.appendChild(timerText);
 
 
-var startButton = document.createElement("button");
-startButton.textContent = "Start";
-elementsArea.appendChild(startButton);
+                var startButton = document.createElement("button");
+                startButton.textContent = "Start";
+                elementsArea.appendChild(startButton);
 
-var stopButton = document.createElement("button");
-stopButton.textContent = "Stop";
-elementsArea.appendChild(stopButton);
+                var stopButton = document.createElement("button");
+                stopButton.textContent = "Stop";
+                elementsArea.appendChild(stopButton);
 
-var endButton = document.createElement("button");
-endButton.textContent = "End";
-elementsArea.appendChild(endButton);
+                var endButton = document.createElement("button");
+                endButton.textContent = "End";
+                elementsArea.appendChild(endButton);
 
-//i want a startTimer function that does something when called
-function startGame() {
-    //console.log("It works")
-    intervalState = setInterval(function(){
-        seconds--;
-        timerText.textContent = seconds;
-        if(seconds <= 0) {
-            clearInterval(intervalState);
-            console.log("Times Up")
-        }
-    }, 1000)
+                //i want a startTimer function that does something when called
+                function startGame() {
+                    //console.log("It works")
+                    intervalState = setInterval(function () {
+                        seconds--;
+                        timerText.textContent = seconds;
+                        if (seconds <= 0) {
+                            clearInterval(intervalState);
+                            console.log("Times Up")
+                        }
+                    }, 1000)
 
-for (var i = 0; index < questions.length; i++) {
-    var questionElement = questions[counter];
+for(var i = 0; i<questions.length; i++) {
+                var questionElement = questions[counter];
 
-    var questionArea = document.createElement("div");
+                var questionArea = document.createElement("div");
 
-    var currentQ = document.createElement("p");
-    currentQ.textContent = questionElement.question
+                var currentQ = document.createElement("p");
+                currentQ.textContent = questionElement.question
 
-    for (i = 0; i < questionElement.answers.length; i++);
-    var answer = document.createElement("p");
-    answer.addEventListener("click", function(){
-        if(!questionElement.answers[i].isCorrect)
-            seconds -= 7
-            alert("Incorrect");
-        else{
-            alert("Correct");
+    for(i = 0; i<questionElement.answers.length; i++);
+        var answer = document.createElement("p");
+        answer.addEventListener("click", function () {
+            if (!questionElement.answers[i].isCorrect)
+                {
+                seconds -= 7
+                alert("Incorrect");
+                }
+            else{
+                alert("Correct");
         }
         counter++;
     });
