@@ -36,12 +36,30 @@ document.body.appendChild(askQuestion3);
 
 var questions = [
 	{
-		text: "What color is an apple",
-		options: ["red", "blue", "green"],
+		text: "String values must be enclosed within ____ when being assigned to variables",
+		options: ["commas", "curly braces", "quotes", "parenthesis"],
         answer: 0
-    
-	}]
 
+    }
+
+]
+
+function addAnswers(question) {
+    var num1 = question[0].options;
+    var something = num1.length;
+    //console.log(question[0].options + "I'm here")
+    //console.log(question.options + "I'm here")
+    for (var i = 0; i < something; i++) {
+        console.log(num1[i])
+        //build the options, append to the ptag (right under the question),
+        var holdOptions = num1[i];
+    }
+    //append stuff
+    //var paras = document.getElementsByTagName("p")[2];
+    //paras.appendChild(holdOptions);
+}
+
+addAnswers(questions);
 
 function addQuestion(question) {
         // Insert paragraph element with innertext of question
